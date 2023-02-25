@@ -79,7 +79,32 @@ namespace DataStructures
         }
 
 
+        public void RemoveLast()
+        {
+            if (IsEmpty())
+                throw new InvalidOperationException("the list is still empty! ");
+            Node current = First;
+            if (First == Last)
+            {
+                First = Last = null;
+             return;
+            }
+            var privius = GetPrevious(this.Last);
+            privius.Next = null;
+            this. Last=privius;
+        }
 
+        private Node GetPrevious(Node node)
+        {
+            Node current = First;
+            while (current != null)
+            {
+                if (current.Next == node) return current;
+
+                current = current.Next;
+            }
+            return null;
+        }
 
 
         private bool IsEmpty()

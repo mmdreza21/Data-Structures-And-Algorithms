@@ -6,3 +6,11 @@ E:\practice\algoritm\DataStructures\obj\Debug\DataStructures.csproj.SuggestedBin
 E:\practice\algoritm\DataStructures\obj\Debug\DataStructures.csproj.CoreCompileInputs.cache
 E:\practice\algoritm\DataStructures\obj\Debug\DataStructures.exe
 E:\practice\algoritm\DataStructures\obj\Debug\DataStructures.pdb
+H:\c#\mmdreza21\Data-Structures-And-Algorithms\bin\Debug\DataStructures.exe.config
+H:\c#\mmdreza21\Data-Structures-And-Algorithms\bin\Debug\DataStructures.exe
+H:\c#\mmdreza21\Data-Structures-And-Algorithms\bin\Debug\DataStructures.pdb
+H:\c#\mmdreza21\Data-Structures-And-Algorithms\obj\Debug\DataStructures.csproj.AssemblyReference.cache
+H:\c#\mmdreza21\Data-Structures-And-Algorithms\obj\Debug\DataStructures.csproj.SuggestedBindingRedirects.cache
+H:\c#\mmdreza21\Data-Structures-And-Algorithms\obj\Debug\DataStructures.csproj.CoreCompileInputs.cache
+H:\c#\mmdreza21\Data-Structures-And-Algorithms\obj\Debug\DataStructures.exe
+H:\c#\mmdreza21\Data-Structures-And-Algorithms\obj\Debug\DataStructures.pdb

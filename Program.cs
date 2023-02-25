@@ -16,6 +16,9 @@ namespace DataStructures
             list.AddLast(5);
             list.AddLast(6);
 
+            //list.RemoveFirst();
+            list.RemoveLast();
+
 
 
             Console.WriteLine(list.IndexOf(98));
