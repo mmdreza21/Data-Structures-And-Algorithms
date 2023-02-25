@@ -10,20 +10,27 @@ namespace DataStructures
     {
         static void Main(string[] args)
         {
+   
+
+
             var list = new LinkedList();
-            list.AddFirst(1);
+            list.AddFirst(6);
+            list.AddFirst(5);
+            list.AddFirst(4);
+            list.AddFirst(3);
             list.AddFirst(2);
-            list.AddLast(5);
-            list.AddLast(6);
+            list.AddFirst(1);
+            list.AddFirst(7);
+            list.AddLast(8);
+            list.AddLast(9);
 
             //list.RemoveFirst();
-            list.RemoveLast();
+            //list.RemoveLast();
+            list.Reverce();
 
+            //Console.WriteLine(list.Size());
 
-
-            Console.WriteLine(list.IndexOf(98));
-            Console.WriteLine(list.Contains(12));
-
+            //foreach (var item in list.ConvertToArr()) { Console.WriteLine(item); }
 
 
         }

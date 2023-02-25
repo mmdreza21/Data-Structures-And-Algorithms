@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Linq;
 
 namespace DataStructures
 {
@@ -19,6 +20,7 @@ namespace DataStructures
         }
         private Node First;
         private Node Last;
+        public int Size { get; private set; }
 
         public void AddFirst(int num)
         {
@@ -29,6 +31,7 @@ namespace DataStructures
                 Last = node;
 
             First = node;
+            Size++;    
 
         }
 
@@ -44,6 +47,7 @@ namespace DataStructures
                 Last.Next = node;
                 Last = node;
             }
+            Size++;
         }
 
         public int IndexOf(int item)
@@ -71,10 +75,13 @@ namespace DataStructures
 
             if (First == Last)
                 Last = First = null;
-
+            else
+            {
             var secund = this.First.Next;
             this.First.Next = null;
             this.First = secund;
+            }
+            Size--;
 
         }
 
@@ -85,13 +92,14 @@ namespace DataStructures
                 throw new InvalidOperationException("the list is still empty! ");
             Node current = First;
             if (First == Last)
-            {
                 First = Last = null;
-             return;
-            }
+            else
+            {
             var privius = GetPrevious(this.Last);
             privius.Next = null;
             this. Last=privius;
+            }
+            Size--;
         }
 
         private Node GetPrevious(Node node)
@@ -104,6 +112,35 @@ namespace DataStructures
                 current = current.Next;
             }
             return null;
+        }
+
+        
+      
+
+        public int[] ConvertToArr()
+        {
+            var arr = new int[Size];
+            Node current = First;
+            int i = 0;
+            while ( current!=null)
+            {
+                arr[i++]= current.Value;
+                current = current.Next;
+            }
+            return arr;
+        }
+
+
+        public void Reverce()
+        {
+            LinkedList newList = new LinkedList();
+
+            Node current = Last;
+            while (current!=First)
+            {
+                var node = new Node();
+            }      
+           
         }
 
 
