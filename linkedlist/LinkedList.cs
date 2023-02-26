@@ -135,24 +135,39 @@ namespace DataStructures
         {
             if (IsEmpty())
                 throw new InvalidOperationException("the list is still empty! ");
-
-            var first = First;
-            Node current = Last;
-
-            if (first != Last)
+            //  [10 -> 20 -> 30 ]
+            //   p      c     n
+            var previouse =First;
+            var current = First.Next;
+            while(current != null)
             {
-                while (current != first)
-                {
-
-                    var previouse = GetPrevious(current);
-                    current.Next = previouse;
-                    current = previouse;
-                }
+                var next =current.Next;
+                current.Next=previouse;
+                previouse = current;
+                current = next;
             }
 
-            First.Next = null;
-            First = Last;
-            Last = first;
+            Last=First; 
+            Last.Next = null;
+            First = previouse;
+
+
+            //var first = First;
+            //Node current = Last;
+
+            //if (first != Last)
+            //{
+            //    while (current != first)
+            //    {
+            //        var previouse = GetPrevious(current);
+            //        current.Next = previouse;
+            //        current = previouse;
+            //    }
+            //}
+
+            //First.Next = null;
+            //First = Last;
+            //Last = first;
         }
 
 
