@@ -31,7 +31,7 @@ namespace DataStructures
                 Last = node;
 
             First = node;
-            Size++;    
+            Size++;
 
         }
 
@@ -77,9 +77,9 @@ namespace DataStructures
                 Last = First = null;
             else
             {
-            var secund = this.First.Next;
-            this.First.Next = null;
-            this.First = secund;
+                var secund = this.First.Next;
+                this.First.Next = null;
+                this.First = secund;
             }
             Size--;
 
@@ -95,9 +95,9 @@ namespace DataStructures
                 First = Last = null;
             else
             {
-            var privius = GetPrevious(this.Last);
-            privius.Next = null;
-            this. Last=privius;
+                var privius = GetPrevious(this.Last);
+                privius.Next = null;
+                this.Last = privius;
             }
             Size--;
         }
@@ -114,17 +114,17 @@ namespace DataStructures
             return null;
         }
 
-        
-      
+
+
 
         public int[] ConvertToArr()
         {
             var arr = new int[Size];
             Node current = First;
             int i = 0;
-            while ( current!=null)
+            while (current != null)
             {
-                arr[i++]= current.Value;
+                arr[i++] = current.Value;
                 current = current.Next;
             }
             return arr;
@@ -133,14 +133,26 @@ namespace DataStructures
 
         public void Reverce()
         {
-            LinkedList newList = new LinkedList();
+            if (IsEmpty())
+                throw new InvalidOperationException("the list is still empty! ");
 
+            var first = First;
             Node current = Last;
-            while (current!=First)
+
+            if (first != Last)
             {
-                var node = new Node();
-            }      
-           
+                while (current != first)
+                {
+
+                    var previouse = GetPrevious(current);
+                    current.Next = previouse;
+                    current = previouse;
+                }
+            }
+
+            First.Next = null;
+            First = Last;
+            Last = first;
         }
 
 
