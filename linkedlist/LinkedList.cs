@@ -91,6 +91,7 @@ namespace DataStructures
             if (IsEmpty())
                 throw new InvalidOperationException("the list is still empty! ");
             Node current = First;
+
             if (First == Last)
                 First = Last = null;
             else
@@ -151,7 +152,7 @@ namespace DataStructures
             Last.Next = null;
             First = previouse;
 
-
+            //
             //var first = First;
             //Node current = Last;
 
@@ -169,6 +170,65 @@ namespace DataStructures
             //First = Last;
             //Last = first;
         }
+
+        public int GetKthFromTheEnd(int k )
+        {
+            if (IsEmpty())
+                throw new InvalidOperationException("the list is still empty! ");
+
+            if (k <= 0)
+                throw new InvalidOperationException("k can not be less than or equal to zero! ");
+
+
+            //if (k > Size)
+            //    throw new InvalidOperationException("k can not be grater than size of linkedList to zero! ");
+
+
+            Node first = First;
+            Node second =First;
+
+            for (int i = 0; i < k-1; i++)
+            {
+
+                second = second.Next;
+                if (second== null)
+                {
+                    throw new InvalidOperationException("k can not be grater than size of linkedList to zero! ");
+                }
+            }
+            while (second != Last)
+            {
+                first=first.Next;
+                second=second.Next;
+            }
+            return first.Value;
+
+
+        }
+
+
+        public int printMiddle()
+        {
+           Node first = First;
+           Node second = First;
+
+            while (second.Next!=null)
+            {
+                first= first.Next;
+                second = second.Next.Next;
+                if (second==null)
+                {
+                        
+                    break;
+                }
+
+                //Console.WriteLine(second.Value);
+            }
+
+            return first.Value;
+          
+  
+        } 
 
 
         private bool IsEmpty()
