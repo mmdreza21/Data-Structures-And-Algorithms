@@ -15,7 +15,7 @@ namespace DataStructures
 
             var list = new LinkedList();
 
-            list.AddFirst(8);
+            //list.AddFirst(8);
             list.AddFirst(7);
             list.AddFirst(6);
             list.AddFirst(5);
@@ -34,7 +34,7 @@ namespace DataStructures
             //list.RemoveLast();
             //list.Reverce();
             //list.GetKthFromTheEnd(2);
-              Console.WriteLine(list.printMiddle());
+            Console.WriteLine(list.printMiddle());
 
             //Console.WriteLine(list.GetKthFromTheEnd(100));
 

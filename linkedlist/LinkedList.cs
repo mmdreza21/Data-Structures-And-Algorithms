@@ -138,17 +138,17 @@ namespace DataStructures
                 throw new InvalidOperationException("the list is still empty! ");
             //  [10 -> 20 -> 30 ]
             //   p      c     n
-            var previouse =First;
+            var previouse = First;
             var current = First.Next;
-            while(current != null)
+            while (current != null)
             {
-                var next =current.Next;
-                current.Next=previouse;
+                var next = current.Next;
+                current.Next = previouse;
                 previouse = current;
                 current = next;
             }
 
-            Last=First; 
+            Last = First;
             Last.Next = null;
             First = previouse;
 
@@ -171,7 +171,7 @@ namespace DataStructures
             //Last = first;
         }
 
-        public int GetKthFromTheEnd(int k )
+        public int GetKthFromTheEnd(int k)
         {
             if (IsEmpty())
                 throw new InvalidOperationException("the list is still empty! ");
@@ -185,21 +185,21 @@ namespace DataStructures
 
 
             Node first = First;
-            Node second =First;
+            Node second = First;
 
-            for (int i = 0; i < k-1; i++)
+            for (int i = 0; i < k - 1; i++)
             {
 
                 second = second.Next;
-                if (second== null)
+                if (second == null)
                 {
                     throw new InvalidOperationException("k can not be grater than size of linkedList to zero! ");
                 }
             }
             while (second != Last)
             {
-                first=first.Next;
-                second=second.Next;
+                first = first.Next;
+                second = second.Next;
             }
             return first.Value;
 
@@ -209,26 +209,26 @@ namespace DataStructures
 
         public int printMiddle()
         {
-           Node first = First;
-           Node second = First;
+            Node first = First;
+            Node second = First;
 
-            while (second.Next!=null)
+            while (second == null || second.Next != null)
             {
-                first= first.Next;
+
+                var beforSecend = second;
+                if (second == null)
+                    return first.Value;
+
+                first = first.Next;
                 second = second.Next.Next;
-                if (second==null)
-                {
-                        
-                    break;
-                }
 
                 //Console.WriteLine(second.Value);
             }
 
             return first.Value;
-          
-  
-        } 
+
+
+        }
 
 
         private bool IsEmpty()
