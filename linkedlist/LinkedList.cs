@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Xml.Linq;
 
 namespace DataStructures
@@ -153,12 +155,12 @@ namespace DataStructures
             First = previouse;
 
             //
-            //var first = First;
+            //var a = First;
             //Node current = Last;
 
-            //if (first != Last)
+            //if (a != Last)
             //{
-            //    while (current != first)
+            //    while (current != a)
             //    {
             //        var previouse = GetPrevious(current);
             //        current.Next = previouse;
@@ -168,7 +170,7 @@ namespace DataStructures
 
             //First.Next = null;
             //First = Last;
-            //Last = first;
+            //Last = a;
         }
 
         public int GetKthFromTheEnd(int k)
@@ -207,25 +209,46 @@ namespace DataStructures
         }
 
 
-        public int printMiddle()
+        public void printMiddle()
         {
-            Node first = First;
-            Node second = First;
-
-            while (second == null || second.Next != null)
+            Node a = First;
+            Node b = First;
+            if (a == null)
             {
-
-                var beforSecend = second;
-                if (second == null)
-                    return first.Value;
-
-                first = first.Next;
-                second = second.Next.Next;
-
-                //Console.WriteLine(second.Value);
+                throw new InvalidOperationException("k can not be grater than size of linkedList to zero! ");
             }
 
-            return first.Value;
+            while (b != Last && b.Next != Last)
+            { 
+                a = a.Next;
+                b = b.Next.Next;
+            }
+                //Console.WriteLine(b.Value);
+            
+                if(b==Last)
+                Console.WriteLine(a.Value);
+                else
+                Console.WriteLine(a.Value + b.Value);
+
+        }
+
+
+            public bool hasLoop()
+        {
+            Node a = First;
+            Node b = First;
+            while (b == null || b==a)
+            {
+                if (b == null)
+                    return false;
+
+                a = a.Next;
+                b = b.Next.Next;
+            }
+                if (a == b)
+                    return true;
+                else 
+                    return false;
 
 
         }

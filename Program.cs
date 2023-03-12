@@ -35,6 +35,8 @@ namespace DataStructures
             //list.Reverce();
             //list.GetKthFromTheEnd(2);
             Console.WriteLine(list.printMiddle());
+       
+
 
             //Console.WriteLine(list.GetKthFromTheEnd(100));
 
