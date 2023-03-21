@@ -1,26 +1,13 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 
 namespace DataStructures
 {
-    public class Stacks
+    public class Expression
     {
-        public void reverseStr(string str)
-        {
-            var stack = new Stack<char>();
-            if (str == null || str == "")
-                throw new ArgumentNullException("nooo dont gime emptistr or null...");
 
-            foreach (var item in str)
-                stack.Push(item);
-
-            while (stack.Count > 0)
-                Console.Write(stack.Pop());
-            Console.WriteLine();
-        }
-
-
+        private readonly List<char> leftlBrkList = new List<char>() { '(', '{', '[', '<' };
+        private readonly List<char> righttlBrkList = new List<char>() { ')', '}', ']', '>' };
 
         public bool oprationHandeling(string str)
         {
@@ -51,20 +38,17 @@ namespace DataStructures
 
         private bool IsLeftBraket(char brk)
         {
-            return brk == '(' || brk == '{' || brk == '[' || brk == '<';
+
+            return leftlBrkList.Contains(brk);
         }
         private bool IsRightBraket(char brk)
         {
-            return brk == ')' || brk == '}' || brk == ']' || brk == '>';
+            return righttlBrkList.Contains(brk);
+            //return brk == || brk ==  || brk ==  || brk == ;
         }
         private bool Bracketmatch(char left, char right)
         {
-            return
-              right == ')' && left != '(' ||
-               right == '}' && left != '{' ||
-                right == ']' && left != '[' ||
-                right == '>' && left != '<'
-                ;
+            return leftlBrkList.IndexOf(left) == righttlBrkList.IndexOf(right);
         }
     }
 }

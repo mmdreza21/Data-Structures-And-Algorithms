@@ -10,12 +10,7 @@ namespace DataStructures
     {
         static void Main(string[] args)
         {
-            var stack = new Stacks();
 
-            stack.reverseStr("l");
-            Console.WriteLine(
-            stack.oprationHandeling("{1-(2}")
-                );
 
 
 
