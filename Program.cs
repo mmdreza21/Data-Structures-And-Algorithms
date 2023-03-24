@@ -10,13 +10,25 @@ namespace DataStructures
     {
         static void Main(string[] args)
         {
-            var stack = new Stack();
-            stack.Push(1);
-            stack.Push(2);
-            stack.Push(3);
-            stack.Pop();
 
-            Console.WriteLine(stack.ToString());
+
+            Queue<int> q = new Queue<int>();
+
+            q.Enqueue(1);
+            q.Enqueue(2);
+            q.Enqueue(3);
+            q.Enqueue(4);
+
+            var rev = new Reverseing();
+
+            rev.reverseQueue(q);
+            foreach (var item in q)
+            {
+                Console.WriteLine(item);
+            }
+
         }
+
+
     }
 }
