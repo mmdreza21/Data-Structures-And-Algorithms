@@ -11,24 +11,30 @@ namespace DataStructures
         static void Main(string[] args)
         {
 
-
-            Queue<int> q = new Queue<int>();
+ArrayQueue q = new ArrayQueue(4);
 
             q.Enqueue(1);
             q.Enqueue(2);
             q.Enqueue(3);
             q.Enqueue(4);
 
-            var rev = new Reverseing();
+            q.Dequeue();
+            q.Dequeue();
 
-            rev.reverseQueue(q);
-            foreach (var item in q)
-            {
-                Console.WriteLine(item);
-            }
+
+            q.Enqueue(33);
+            q.Enqueue(44);
+
+            q.Dequeue();
+            q.Dequeue();
+            Console.WriteLine(q.Peek());
+            Console.WriteLine(q.IsEmpty());
+            Console.WriteLine(q.IsFull());
+
+            q.Log();
 
         }
 
-
+         
     }
 }

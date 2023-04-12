@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrayQueue.cs" />
     <Compile Include="Arrays.cs" />
     <Compile Include="LinkedList.cs" />
     <Compile Include="Logger.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="Expression.cs" />
     <Compile Include="Reverseing.cs" />
     <Compile Include="Stack.cs" />
+    <Compile Include="StackQueue.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
