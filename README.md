@@ -1,3 +1,3 @@
 # DataStructures
 
-this is just practice and a note to reviwe.
+This is just an exercise and a note to remember.
