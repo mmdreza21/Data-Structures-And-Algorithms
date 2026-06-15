@@ -45,6 +45,13 @@
   <ItemGroup>
     <Compile Include="ArrayQueue.cs" />
     <Compile Include="Arrays.cs" />
+    <Compile Include="Exercises\ArrayExercises.cs" />
+    <Compile Include="Exercises\DynamicProgrammingExercises.cs" />
+    <Compile Include="Exercises\HashMapExercises.cs" />
+    <Compile Include="Exercises\HashSetExercises.cs" />
+    <Compile Include="Exercises\SortingExercises.cs" />
+    <Compile Include="Exercises\StringExercises.cs" />
+    <Compile Include="HSExercises.cs" />
     <Compile Include="LinkedList.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Program.cs" />
@@ -53,9 +60,13 @@
     <Compile Include="Reverseing.cs" />
     <Compile Include="Stack.cs" />
     <Compile Include="StackQueue.cs" />
+    <Compile Include="Tree.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Exercises\Recommended solving order.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
