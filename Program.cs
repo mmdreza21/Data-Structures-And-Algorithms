@@ -1,40 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStructures
 {
     internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
 
-ArrayQueue q = new ArrayQueue(4);
+            int[] arr = { 100, 2, 3, 4, 5, 6, 7, 8, 9 };
 
-            q.Enqueue(1);
-            q.Enqueue(2);
-            q.Enqueue(3);
-            q.Enqueue(4);
-
-            q.Dequeue();
-            q.Dequeue();
+            var ex = new HSExercises();
 
 
-            q.Enqueue(33);
-            q.Enqueue(44);
-
-            q.Dequeue();
-            q.Dequeue();
-            Console.WriteLine(q.Peek());
-            Console.WriteLine(q.IsEmpty());
-            Console.WriteLine(q.IsFull());
-
-            q.Log();
+            Console.WriteLine(ex.TwoSum(arr, 9)[0] + " " + ex.TwoSum(arr, 9)[1]);
 
         }
 
-         
+
     }
 }

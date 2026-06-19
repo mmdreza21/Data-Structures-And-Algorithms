@@ -4,32 +4,45 @@ namespace DataStructures.Exercises
 {
     public class HashMapExercises
     {
-        public int MostFrequentNumber(int[] nums) { }
+        //public int MostFrequentNumber(int[] nums) { }
 
-        public char MostFrequentCharacter(string str) { }
+        //public char MostFrequentCharacter(string str) { }
 
-        public bool ContainsDuplicate(int[] nums) { }
+        //public bool ContainsDuplicate(int[] nums) { }
 
-        public bool IsAnagram(string first, string second) { }
+        //public bool IsAnagram(string first, string second) { }
 
-        public int[] TwoSum(int[] nums, int target) { }
+        public int[] TwoSum(int[] nums, int target)
+        {
+            Dictionary<int, int> seen = new Dictionary<int, int>();
 
-        public int FirstRepeatedNumber(int[] nums) { }
+            int[] res = new int[2];
+            for (int i = 0; i < nums.Length; i++)
+            {
+                int complement = target - nums[i];
+                if (seen.ContainsKey(complement)) return new[] { seen[complement], i };
+                seen[complement] = i;
+            }
 
-        public int CountDistinctNumbers(int[] nums) { }
+            return null;
+        }
 
-        public Dictionary<int, int> FrequencyMap(int[] nums) { }
+        //public int FirstRepeatedNumber(int[] nums) { }
 
-        public char FirstNonRepeatingCharacter(string str) { }
+        //public int CountDistinctNumbers(int[] nums) { }
 
-        public string GroupAnagrams(string[] words) { }
+        //public Dictionary<int, int> FrequencyMap(int[] nums) { }
 
-        public int LongestConsecutiveSequence(int[] nums) { }
+        //public char FirstNonRepeatingCharacter(string str) { }
 
-        public int CountPairsWithSum(int[] nums, int target) { }
+        //public string GroupAnagrams(string[] words) { }
 
-        public bool CanConstructRansomNote(string ransom, string magazine) { }
+        //public int LongestConsecutiveSequence(int[] nums) { }
 
-        public int SubarraySumEqualsK(int[] nums, int k) { }
+        //public int CountPairsWithSum(int[] nums, int target) { }
+
+        //public bool CanConstructRansomNote(string ransom, string magazine) { }
+
+        //public int SubarraySumEqualsK(int[] nums, int k) { }
     }
 }

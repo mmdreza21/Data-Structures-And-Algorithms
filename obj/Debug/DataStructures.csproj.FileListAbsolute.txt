@@ -14,3 +14,10 @@ C:\Users\A\source\repos\mmdreza21\Data-Structures-And-Algorithms\obj\Debug\DataS
 C:\Users\A\source\repos\mmdreza21\Data-Structures-And-Algorithms\obj\Debug\DataStructures.csproj.CoreCompileInputs.cache
 C:\Users\A\source\repos\mmdreza21\Data-Structures-And-Algorithms\obj\Debug\DataStructures.exe
 C:\Users\A\source\repos\mmdreza21\Data-Structures-And-Algorithms\obj\Debug\DataStructures.pdb
+E:\learning\DSA\Data-Structures-And-Algorithms\obj\Debug\DataStructures.csproj.AssemblyReference.cache
+E:\learning\DSA\Data-Structures-And-Algorithms\obj\Debug\DataStructures.csproj.CoreCompileInputs.cache
+E:\learning\DSA\Data-Structures-And-Algorithms\bin\Debug\DataStructures.exe.config
+E:\learning\DSA\Data-Structures-And-Algorithms\bin\Debug\DataStructures.exe
+E:\learning\DSA\Data-Structures-And-Algorithms\bin\Debug\DataStructures.pdb
+E:\learning\DSA\Data-Structures-And-Algorithms\obj\Debug\DataStructures.exe
+E:\learning\DSA\Data-Structures-And-Algorithms\obj\Debug\DataStructures.pdb

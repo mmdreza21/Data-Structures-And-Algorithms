@@ -83,7 +83,19 @@ namespace DataStructures
     * @param target - The target sum to find
     * @returns An array of two indices if a pair is found, otherwise null
    */
-        //public void TwoSum(int[] nums, int target) { }
+        public int[] TwoSum(int[] nums, int target)
+        {
+            Dictionary<int, int> seen = new Dictionary<int, int>();
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                int complement = target - nums[i];
+                if (seen.ContainsKey(complement)) return new[] { seen[complement], i };
+                seen[nums[i]] = i;
+            }
+
+            return null;
+        }
 
         /**
         * Given an array of integers,
