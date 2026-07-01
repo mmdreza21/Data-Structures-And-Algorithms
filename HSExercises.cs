@@ -110,7 +110,15 @@ namespace DataStructures
        */
         //Easy
 
-        //public int FindMax(int[] nums) { }
+        public int FindMax(int[] nums)
+        {
+            int max = int.MinValue;
+
+            foreach (var item in nums)
+                if (item > max) max = item;
+
+            return max;
+        }
         /**
             * Given an array of integers,
             * return the smallest number in the array.
@@ -122,7 +130,15 @@ namespace DataStructures
             * @param nums - Array of integers
             * @returns The smallest number
          */
-        //public int FindMin(int[] nums) { }
+        public int FindMin(int[] nums)
+        {
+            int min = int.MaxValue;
+
+            foreach (var item in nums)
+                if (item < min) min = item;
+
+            return min;
+        }
         /**
             * Given an array of integers,
             * calculate the sum of all elements.
@@ -134,7 +150,14 @@ namespace DataStructures
             * @param nums - Array of integers
             * @returns Sum of all numbers
          */
-        //public int SumArray(int[] nums) { }
+        public int SumArray(int[] nums)
+        {
+            int sum = 0;
+            foreach (var item in nums)
+                sum += item;
+
+            return sum;
+        }
         /**
             * Given a string,
             * count the number of vowels.
@@ -146,7 +169,19 @@ namespace DataStructures
             * @param str - Input string
             * @returns Number of vowels
          */
-        //public int CountVowels(string str) { }
+        public int CountVowels(string str)
+        {
+            int count = 0;
+            HashSet<char> vowels = new HashSet<char> { 'a', 'e', 'i', 'o', 'u' };
+
+            foreach (var item in str)
+                if (vowels.Contains(char.ToLowerInvariant(item))) count++;
+
+            return count;
+
+            // ToLowerInvariant() → data processing, programming logic, parsing, comparisons.This is usually the safer default.
+            // ToLower() → when formatting text for people according to their language and culture.
+        }
         /**
             * Given a string,
             * determine whether it is a palindrome.
@@ -158,7 +193,34 @@ namespace DataStructures
             * @param str - Input string
             * @returns True if palindrome, otherwise false
          */
-        //public bool IsPalindrome(string str) { }
+        public bool IsPalindrome(string str)
+        {
+            Stack<char> stack = new Stack<char>(str);
+
+            foreach (var c in str)
+            {
+                if (stack.Pop() != c) return false;
+            }
+            return true;
+            // Time O(n)
+            // Space O(n)
+        }
+        public bool IsPalindrome2(string str)
+        {
+            int left = 0;
+            int right = str.Length - 1;
+            while (left < right)
+            {
+
+                if (str[left] != str[right]) return false;
+                left++;
+                right--;
+            }
+
+            return true;
+            // Time O(n)
+            // Space O(1)
+        }
         /**
             * Given an array of integers,
             * reverse the array.
@@ -170,7 +232,17 @@ namespace DataStructures
             * @param nums - Array of integers
             * @returns Reversed array
          */
-        //public int[] ReverseArray(int[] nums) { }
+        public int[] ReverseArray(int[] nums)
+        {
+            //add to Stack and pop (O(n+2))
+            //add to and othe array(t:O(n^2) s:O(n)) Bad
+            //add revesed to othe array(t:O(n) s:O(n)) Bad
+            int[] result = new int[nums.Length];
+            for (int i = 0; i < result.Length; i++)
+                result[i] = nums[nums.Length - i - 1];
+
+            return result;
+        }
 
         //Easy-Medium
         /**
@@ -184,19 +256,77 @@ namespace DataStructures
             * @param nums - Array of integers
             * @returns Second largest number
          */
-        //public int SecondLargest(int[] nums) { }
+        public int SecondLargest(int[] nums)
+        {
+            int secMax = int.MinValue;
+            int max = int.MinValue;
+
+            foreach (int i in nums)
+            {
+                if (max < i)
+                {
+                    secMax = max;
+                    max = i;
+                }
+                else if (secMax < i && max != i)
+                    secMax = i;
+
+            }
+            return secMax;
+            // Time: O(n) 
+            // Space: O(1) 
+        }
         /**
             * Given an array of integers,
             * remove duplicate values.
          *
             * Example:
-            *   Input: [1,1,2,2,3,4]
+            *   Input: [1,1,2,2,2,3,4]
             *   Output: [1,2,3,4]
          *
             * @param nums - Array of integers
             * @returns Array without duplicates
          */
-        //public int[] RemoveDuplicates(int[] nums) { }
+        public int[] RemoveDuplicates(int[] nums)
+        {
+
+            //HashSet<int> result = new HashSet<int>(nums);
+            //return result.ToArray<int>();
+            //if (seen.Add(num)) -> true → number wasn't in the set
+            //Time: O(n)(average)
+            //Space: O(n)
+
+
+            List<int> result = new List<int>();
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == nums[i - 1]) result.Add(nums[i]);
+            }
+            return result.ToArray();
+            //Time: O(n)
+            //Space: O(n)(because you're returning a new array)
+        }
+        public int RemoveDuplicates2(int[] nums)
+        {
+            if (nums.Length == 0)
+                return 0;
+
+            int write = 1;
+
+            for (int read = 1; read < nums.Length; read++)
+            {
+                if (nums[read] != nums[read - 1])
+                {
+                    nums[write] = nums[read];
+                    write++;
+                }
+            }
+
+            return write;//new Length;
+        }
+
+
+
         /**
             * Given two strings,
             * determine whether they are anagrams.
@@ -210,6 +340,7 @@ namespace DataStructures
             * @returns True if anagrams
          */
         //public bool AreAnagrams(string first, string second) { }
+
         /**
             * Given an array of integers,
             * find the first repeating number.
